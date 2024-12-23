@@ -1,0 +1,164 @@
+:root {
+  --purple: hsl(259, 100%, 65%);
+  --red: hsl(0, 100%, 67%);
+  --white: hsl(0, 0%, 100%);
+  --off-white: hsl(0, 0%, 94%);
+  --light-grey: hsl(0, 0%, 86%);
+  --smokey-grey: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+}
+
+html {
+  margin: 0;
+  font-family: "Poppins", serif;
+  background-color: var(--off-white);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  background-color: var(--white);
+  width: 350px;
+  height: 475px;
+  border-radius: 30px;
+  border-bottom-right-radius: 175px;
+  margin-top: 50px;
+}
+
+.inputs {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+}
+
+.inputs > * {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 90px;
+  width: 150px;
+}
+
+input {
+  max-width: 70px;
+  min-width: 40px;
+  height: 35px;
+  font-size: 24px;
+  border-radius: 8px;
+  border: 1px solid var(--light-grey);
+  padding: 10px;
+  font-family: "Poppins", serif;
+  font-weight: 700;
+}
+
+/* Remove number controls on number input fields */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+label {
+  text-transform: uppercase;
+  color: var(--smokey-grey);
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 14px;
+}
+
+.results {
+  padding: 0px 20px 20px 20px;
+  font-size: 52px;
+  font-weight: 800;
+  text-transform: lowercase;
+  font-style: italic;
+}
+
+.results p {
+  margin: -20px;
+  padding-left: 20px;
+}
+
+.purple {
+  color: var(--purple);
+}
+
+.image-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  place-items: center;
+  text-align: center;
+}
+
+img {
+  display: block;
+  background-color: var(--purple);
+  padding: 10px;
+  margin-top: -30px;
+  margin-bottom: 40px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.error {
+  color: var(--red);
+  font-size: 10px;
+  font-style: italic;
+  max-width: 75px;
+}
+
+.image-container hr {
+  width: 85%; /* Ensures <hr> fills the grid column */
+  border: none; /* Optional: Removes default border style */
+  border-top: 1px solid var(--light-grey);
+  padding: 0px 10px;
+}
+
+@media screen and (min-width: 700px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .container {
+    width: 650px;
+    height: 475px;
+  }
+
+  img {
+    padding: 26px;
+    margin: -20px 80px -20px -20px;
+  }
+
+  input {
+    max-width: 300px;
+    height: 40px;
+  }
+
+  .inputs {
+    padding: 40px 40px 0px 40px;
+  }
+
+  .results {
+    font-size: 62px;
+    padding: 0px 50px 50px 50px;
+  }
+
+  .results > * {
+    padding: 0;
+  }
+
+  .image-container {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    align-items: center;
+  }
+}
